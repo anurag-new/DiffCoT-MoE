@@ -1,0 +1,11 @@
+# Ignore model weights
+*.pt
+*.bin
+*.safetensors
+
+# Ignore python cache
+__pycache__/
+*.pyc
+
+# Ignore notebook checkpoints
+.ipynb_checkpoints
