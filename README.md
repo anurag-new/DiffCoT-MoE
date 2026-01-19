@@ -47,3 +47,37 @@ graph LR
 
 ```bash
 pip install -r requirements.txt
+
+##🔬 Future Research Roadmap
+This project represents a functional proof-of-concept. To elevate this work to a publishable research paper, the following phases are proposed:
+
+Phase 1: Scaled Training (The "Convergence" Phase)
+Objective: Achieve coherent English reasoning traces.
+
+Current Limitation: Free-tier GPUs restrict training to ~50 steps, resulting in "babbling" (mode collapse).
+
+Proposed Solution:
+
+Scale training duration to 10+ epochs (~12 hours) on NVIDIA A100 (80GB) hardware.
+
+Implement Cosine Noise Scheduling to improve the signal-to-noise ratio during the final steps of denoising.
+
+Phase 2: Quantitative Evaluation (The "Benchmark" Phase)
+Objective: Measure the reasoning improvement over the baseline.
+
+Metric: Accuracy on the GSM8K (Grade School Math) test set.
+
+Experiment:
+
+Baseline: Run standard autoregressive generation with Qwen-1.5-MoE-A2.7B.
+
+DiffCoT: Generate reasoning traces using the trained Diffusion Head, then decode the final vector.
+
+Comparison: Calculate (DiffCoT Accuracy - Baseline Accuracy).
+
+Phase 3: Ablation Studies (The "Why" Phase)
+Objective: Validate the architectural choices.
+
+Study A (The MoE Factor): Compare training efficiency (FLOPS) against a dense model (e.g., Llama-3-8B) to quantify the speedup provided by the Mixture-of-Experts architecture.
+
+Study B (The Diffusion Steps): Analyze the trade-off between inference latency and answer quality by varying denoising steps (e.g., 20 vs. 50 vs. 100 steps).
