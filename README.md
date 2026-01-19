@@ -36,19 +36,7 @@ graph LR
     Z0 --> LM[LM Head Decoder]
     LM --> Out[Output Text]
 ```
-## 🛠️ Tech Stack
-* **Python 3.10+**
-* **PyTorch** (Custom Module Logic)
-* **HuggingFace Transformers** (Model Loading)
-* **BitsAndBytes** (QLoRA/Quantization)
-* **Accelerate** (Device Management)
-
-## 💻 Installation
-
-```bash
-pip install -r requirements.txt
-
-##🔬 Future Research Roadmap
+🔬 Future Research Roadmap
 This project represents a functional proof-of-concept. To elevate this work to a publishable research paper, the following phases are proposed:
 
 Phase 1: Scaled Training (The "Convergence" Phase)
@@ -81,3 +69,15 @@ Objective: Validate the architectural choices.
 Study A (The MoE Factor): Compare training efficiency (FLOPS) against a dense model (e.g., Llama-3-8B) to quantify the speedup provided by the Mixture-of-Experts architecture.
 
 Study B (The Diffusion Steps): Analyze the trade-off between inference latency and answer quality by varying denoising steps (e.g., 20 vs. 50 vs. 100 steps).
+## 🛠️ Tech Stack
+* **Python 3.10+**
+* **PyTorch** (Custom Module Logic)
+* **HuggingFace Transformers** (Model Loading)
+* **BitsAndBytes** (QLoRA/Quantization)
+* **Accelerate** (Device Management)
+
+## 💻 Installation
+
+```bash
+pip install -r requirements.txt
+
